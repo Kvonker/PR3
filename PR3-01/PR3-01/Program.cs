@@ -119,12 +119,14 @@ namespace PR3_01
         Person dsp = new Person();
 
         // Îòêðûâàåì ôàéë äëÿ ÷òåíèÿ äàííûõ	
-        FileStream fs = new FileStream("Person.Dat", FileMode.Open);
+        FileStream fs = new FileStream("Person.Dat", FileMode.Create);
         // Ñîçäàåì îáúåêò BinaryFormatter äëÿ âûïîëíåíèÿ äåñåðèàëèçàöèè
         BinaryFormatter bf = new BinaryFormatter();
         // Èñïîëüçóåì îáúåêò BinaryFormatter äëÿ äåñåðèàëèçàöèè äàííûõ èç ôàéëà
-        dsp = (Person)bf.Deserialize(fs);
-        // Çàêðûâàåì ôàéë fs.Close();
+        //dsp = (Person)bf.Deserialize(fs);
+        // Çàêðûâàåì ôàéë 
+        
+        fs.Close();
 
         return dsp;
 
